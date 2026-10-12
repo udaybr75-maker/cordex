@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="YADHU // PHANTOM NEXUS — 240-Frame Scroll-Scrubbed Hero Animation with Scroll-Driven Feature Overlays, 11 Sci-Fi Portals, and Pricing."
+  />
+  <title>YADHU // PHANTOM NEXUS — 240-Frame Scroll Experience</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Orbitron:wght@600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Cache-busted stylesheet so updates appear immediately -->
+  <link rel="stylesheet" href="styles.css?v=knop240_v4" />
+</head>
+<body>
+  <!-- Live 3D Deep-Space Warp Starfield Canvas (For Sections Below Hero) -->
+  <canvas id="cosmos-canvas" aria-hidden="true"></canvas>
+
+  <!-- Subtle Sci-Fi Scanlines -->
+  <div class="hud-scanlines" aria-hidden="true"></div>
+
+  <!-- Top Scroll Warp Progress Bar -->
+  <div class="warp-progress-track" aria-hidden="true">
+    <div class="warp-progress-bar" id="scroll-progress-bar"></div>
+  </div>
+
+  <!-- Floating Holographic Navigation Dock -->
+  <header class="floating-header" id="top">
+    <nav class="holo-dock" aria-label="Phantom Nexus Navigation">
+      <a href="#hero-stage" class="dock-brand">
+        <span class="reactor-dot" aria-hidden="true"></span>
+        <span>YADHU</span>
+        <span class="dock-tag">KNOP-240</span>
+      </a>
+
+      <ul class="dock-links">
+        <li><a href="#hero-stage" class="dock-link">01 Hero (240 Frames)</a></li>
+        <li><a href="#star-map" class="dock-link">02 Star Radar</a></li>
+        <li><a href="#portal-deck" class="dock-link">03 Portals (11)</a></li>
+        <li><a href="#holo-details" class="dock-link">04 Details</a></li>
+        <li><a href="#pricing-matrix" class="dock-link">05 Pricing</a></li>
+      </ul>
+
+      <div class="dock-telemetry" aria-hidden="true">
+        <span class="warp-label" id="frame-readout">FRAME 001 / 240</span>
+        <span id="nav-scroll-readout">00%</span>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <!-- ===================================================================
+         HERO SECTION: 600VH SCROLL-BASED 240-FRAME KNOP IMAGE SEQUENCE
+         + CONTINUOUS SCROLL-DRIVEN FEATURE TEXT OVERLAYS ON TOP
+         Strictly NO buttons on the Hero section.
+         =================================================================== -->
+    <section id="hero-stage" class="knop-hero-track" aria-label="Scroll-driven 240-frame sci-fi hero experience">
+      <div class="knop-sticky-stage">
+        <!-- Fullscreen Canvas Rendering all 240 PNG frames from knop/ -->
+        <canvas id="knop-sequence-canvas"></canvas>
+
+        <!-- Subtle Vignette for High Contrast Scroll Text on Top -->
+        <div class="knop-vignette-layer" aria-hidden="true"></div>
+
+        <!-- Right-Side Vertical Scroll Timeline & Frame scrubber indicator -->
+        <aside class="hero-timeline-rail" aria-hidden="true">
+          <div class="rail-dot is-active" data-rail-stage="0"><span>01</span></div>
+          <div class="rail-dot" data-rail-stage="1"><span>02</span></div>
+          <div class="rail-dot" data-rail-stage="2"><span>03</span></div>
+          <div class="rail-dot" data-rail-stage="3"><span>04</span></div>
+          <div class="rail-dot" data-rail-stage="4"><span>05</span></div>
+          <div class="rail-progress-line">
+            <div class="rail-progress-fill" id="hero-rail-fill"></div>
+          </div>
+        </aside>
+
+        <!-- Bottom Frame Scrubber HUD Bar -->
+        <div class="hero-bottom-hud" aria-hidden="true">
+          <div class="hud-left-meta">
+            <span class="hud-dot-live"></span>
+            <span id="hud-buffer-status">LOADING 240 FRAMES...</span>
+          </div>
+          <div class="hud-frame-bar">
+            <div class="hud-frame-fill" id="hud-frame-fill"></div>
+          </div>
+          <div class="hud-right-meta">
+            <span id="hud-frame-counter">FRAME 001 / 240</span>
+          </div>
+        </div>
+
+        <!-- ===============================================================
+             SCROLL-DRIVEN FEATURE TEXT OVERLAYS ON TOP OF THE 240 FRAMES
+             Each stage's opacity, Y-translation, scale, and blur are
+             continuously interpolated from scroll position in script.js!
+             =============================================================== -->
+        <div class="hero-scroll-features-layer">
+          <!-- STAGE 01 (Frames 001–048): Monumental Hero Opening (No Buttons) -->
+          <div class="scroll-feature-stage stage-center" id="hero-feat-0">
+            <span class="feat-eyebrow">YADHU // FIRST SCI-FI COMMAND NEXUS</span>
+            <h1 class="feat-monument-title">
+              WELCOME TO<br />
+              <span class="neon-gradient-text">PHANTOM UNIVERSE</span>
+            </h1>
+            <p class="feat-sub">SCROLL TO SCRUB ALL 240 FRAMES &amp; UNLOCK FEATURES ↓</p>
+          </div>
+
+          <!-- STAGE 02 (Frames 049–096): Feature 01 — Stealth Identity Cloak (Left HUD) -->
+          <div class="scroll-feature-stage stage-left" id="hero-feat-1">
+            <div class="feat-glass-card">
+              <div class="feat-card-header">
+                <span class="feat-badge">FEATURE 01 // FRAMES 049–096</span>
+                <span class="feat-code">ID: //_ERR_PHANTOM</span>
+              </div>
+              <h2 class="feat-title">Zero-Trace Stealth Cloak</h2>
+              <p class="feat-desc">
+                Biometric &amp; identity shielding powered by quantum alias relays—Proton Mail,
+                SimpleLogin, 33Mail, and CrackOne Inbox.
+              </p>
+              <div class="feat-telemetry-bars">
+                <div class="t-row"><span>IDENTITY MASKING</span><strong>100% ENCRYPTED</strong></div>
+                <div class="t-track"><div class="t-fill" style="width: 100%"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- STAGE 03 (Frames 097–144): Feature 02 — Neural Visor AI Cortex (Right HUD) -->
+          <div class="scroll-feature-stage stage-right" id="hero-feat-2">
+            <div class="feat-glass-card">
+              <div class="feat-card-header">
+                <span class="feat-badge">FEATURE 02 // FRAMES 097–144</span>
+                <span class="feat-code">VISOR LOCK: ACTIVE</span>
+              </div>
+              <h2 class="feat-title">Neural Visor AI Cortex</h2>
+              <p class="feat-desc">
+                Real-time optical routing into DeepSeek, BytePlus Playground, and FreeAI Models
+                with 0.32ms reasoning latency.
+              </p>
+              <div class="feat-telemetry-bars">
+                <div class="t-row"><span>NEURAL THROUGHPUT</span><strong>4.8× FASTER</strong></div>
+                <div class="t-track"><div class="t-fill" style="width: 92%"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- STAGE 04 (Frames 145–192): Feature 03 — Threat Level High / Media Overdrive (Center) -->
+          <div class="scroll-feature-stage stage-center" id="hero-feat-3">
+            <div class="feat-glass-card card-red-alert">
+              <div class="feat-card-header">
+                <span class="feat-badge badge-red">FEATURE 03 // FRAMES 145–192</span>
+                <span class="feat-code">OVERDRIVE MODE</span>
+              </div>
+              <h2 class="feat-title red-glow-text">THREAT LEVEL: HIGH POWER</h2>
+              <p class="feat-desc">
+                Unthrottled 4K photonic image generation &amp; 48kHz voice synthesis with Raphael AI,
+                Pollinations, ElevenLabs, and Optical Logo Eraser.
+              </p>
+            </div>
+          </div>
+
+          <!-- STAGE 05 (Frames 193–240): Feature 04 — Dual Phantom Protocol (Split Left & Right) -->
+          <div class="scroll-feature-stage stage-dual" id="hero-feat-4">
+            <div class="feat-glass-card dual-card">
+              <span class="feat-badge">PHANTOM_01 // AI &amp; MEDIA</span>
+              <h3 class="feat-dual-title">7 Neural &amp; Media Cores</h3>
+              <p class="feat-desc">DeepSeek · BytePlus · Raphael · Pollinations · FreeAI · ElevenLabs · Video Eraser</p>
+            </div>
+
+            <div class="feat-glass-card dual-card">
+              <span class="feat-badge">PHANTOM_02 // STEALTH COMMS</span>
+              <h3 class="feat-dual-title">4 Encrypted Comm Relays</h3>
+              <p class="feat-desc">Proton Vault · SimpleLogin · 33Mail Relay · CrackOne Terminal</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SECTOR 02: INTERACTIVE 3D ORBITAL STAR MAP (ALL 11 WEBSITES ORBITING)
+         =================================================================== -->
+    <section id="star-map" class="starmap-section" aria-labelledby="starmap-heading">
+      <div class="container">
+        <div class="sector-header fm-reveal">
+          <span class="sector-code">SECTOR 02 // ORBITAL RADAR</span>
+          <h2 id="starmap-heading" class="sector-title">11 Space Satellites</h2>
+          <p class="sector-sub">Hover to lock radar · Click any sci-fi icon to launch</p>
+        </div>
+
+        <div class="starmap-stage fm-reveal" id="starmap-stage">
+          <div class="starmap-radar-sweep" aria-hidden="true"></div>
+          <div class="starmap-ring sr-1" aria-hidden="true"></div>
+          <div class="starmap-ring sr-2" aria-hidden="true"></div>
+          <div class="starmap-ring sr-3" aria-hidden="true"></div>
+
+          <div class="starmap-sun">
+            <span class="sun-code">NEXUS</span>
+            <strong>YADHU</strong>
+          </div>
+
+          <div id="orbital-nodes-container" class="orbital-nodes-layer"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SECTOR 03: THE 11 SCI-FI WEBSITE PORTALS (WITH SCI-FI ICONS & ANIMATIONS)
+         =================================================================== -->
+    <section id="portal-deck" class="portals-section" aria-labelledby="portals-heading">
+      <div class="container">
+        <div class="sector-header fm-reveal">
+          <span class="sector-code">SECTOR 03 // HYPERSPACE GATES</span>
+          <h2 id="portals-heading" class="sector-title">11 Command Portals</h2>
+        </div>
+
+        <div class="filter-bar fm-reveal" role="tablist" aria-label="Filter space portals">
+          <button type="button" class="filter-chip is-active" data-filter="all">
+            <span>✦ All Nodes (11)</span>
+          </button>
+          <button type="button" class="filter-chip" data-filter="ai">
+            <span>◈ Neural AI (5)</span>
+          </button>
+          <button type="button" class="filter-chip" data-filter="comms">
+            <span>⌬ Stealth Mail (4)</span>
+          </button>
+          <button type="button" class="filter-chip" data-filter="media">
+            <span>◉ Sonic &amp; Video (2)</span>
+          </button>
+        </div>
+
+        <div id="portals-grid" class="portals-grid" role="list"></div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SECTOR 04: SCI-FI DETAILS & HOLOGRAPHIC PHANTOM FRAMES
+         =================================================================== -->
+    <section id="holo-details" class="holo-details-section" aria-labelledby="details-heading">
+      <div class="container">
+        <div class="sector-header fm-reveal">
+          <span class="sector-code">SECTOR 04 // SYSTEM DETAILS</span>
+          <h2 id="details-heading" class="sector-title">Phantom Architecture</h2>
+        </div>
+
+        <div class="holo-showcase-grid">
+          <article class="holo-scene-card fm-reveal" data-fm-delay="0">
+            <div class="scene-viewport">
+              <img src="knop_fast/ezgif-frame-001.webp" alt="Phantom Unit 01 Classified HUD" class="scene-bg-img" loading="lazy" />
+              <div class="shield-laser-scan" aria-hidden="true"></div>
+              <div class="scene-hud-overlay">
+                <span>ID // PHANTOM-01</span>
+                <span>STEALTH CORE</span>
+              </div>
+            </div>
+            <div class="scene-meta">
+              <span class="scene-badge">01 // CLOAK PROTOCOL</span>
+              <h3>Encrypted Identity</h3>
+              <p>Zero-trace mail relays &amp; masked login gates.</p>
+            </div>
+          </article>
+
+          <article class="holo-scene-card fm-reveal" data-fm-delay="100">
+            <div class="scene-viewport">
+              <img src="knop_fast/ezgif-frame-060.webp" alt="Neural Visor Telemetry HUD" class="scene-bg-img" loading="lazy" />
+              <div class="wormhole-tunnel" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="scene-hud-overlay">
+                <span>VISOR // LOCK</span>
+                <span>0.4ms NEURAL</span>
+              </div>
+            </div>
+            <div class="scene-meta">
+              <span class="scene-badge">02 // NEURAL CORTEX</span>
+              <h3>Multi-Model AI</h3>
+              <p>DeepSeek, BytePlus, Raphael &amp; Pollinations.</p>
+            </div>
+          </article>
+
+          <article class="holo-scene-card fm-reveal" data-fm-delay="200">
+            <div class="scene-viewport">
+              <img src="knop_fast/ezgif-frame-120.webp" alt="Threat Level High Visor" class="scene-bg-img" loading="lazy" />
+              <div class="scene-hud-overlay">
+                <span>OVERDRIVE // MAX</span>
+                <span>4K · 48KHZ</span>
+              </div>
+            </div>
+            <div class="scene-meta">
+              <span class="scene-badge">03 // SONIC &amp; OPTICAL</span>
+              <h3>Media Synthesis</h3>
+              <p>ElevenLabs neural voice &amp; optical video cleaning.</p>
+            </div>
+          </article>
+
+          <article class="holo-scene-card fm-reveal" data-fm-delay="300">
+            <div class="scene-viewport">
+              <img src="knop_fast/ezgif-frame-240.webp" alt="Dual Phantom Units 01 and 02" class="scene-bg-img" loading="lazy" />
+              <div class="scene-hud-overlay">
+                <span>DUAL // SYNC</span>
+                <span>99.98% UPTIME</span>
+              </div>
+            </div>
+            <div class="scene-meta">
+              <span class="scene-badge">04 // TWIN ENGINE</span>
+              <h3>Redundant Mesh</h3>
+              <p>11 synchronized portals inside one command deck.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SECTOR 05: HOLOGRAPHIC PRICING & ACCESS MATRIX
+         =================================================================== -->
+    <section id="pricing-matrix" class="pricing-section" aria-labelledby="pricing-heading">
+      <div class="container">
+        <div class="sector-header fm-reveal">
+          <span class="sector-code">SECTOR 05 // CLEARANCE MATRIX</span>
+          <h2 id="pricing-heading" class="sector-title">System Pricing</h2>
+        </div>
+
+        <div class="cadence-wrap fm-reveal" role="group" aria-label="Billing cycle">
+          <div class="cadence-pill-box">
+            <button type="button" class="cadence-btn is-active" data-cadence="monthly">Monthly Orbit</button>
+            <button type="button" class="cadence-btn" data-cadence="annual">Annual Warp <em>-25%</em></button>
+            <button type="button" class="cadence-btn" data-cadence="lifetime">Lifetime Key</button>
+          </div>
+        </div>
+
+        <div class="pricing-holo-grid">
+          <article class="price-pod fm-reveal" data-fm-delay="0">
+            <div class="pod-visual-header">
+              <div class="pod-orb orb-cyan"></div>
+              <span class="pod-tier-code">TIER 01 // OPEN</span>
+            </div>
+            <h3 class="pod-title">Explorer</h3>
+            <div class="pod-price-row">
+              <span class="pod-currency">$</span>
+              <span class="price-figure" data-price-monthly="0" data-price-annual="0" data-price-lifetime="0">0</span>
+              <span class="price-period" data-period-monthly="/ forever" data-period-annual="/ forever" data-period-lifetime="/ forever">/ forever</span>
+            </div>
+
+            <div class="pod-gauges">
+              <div class="gauge-row"><span>11 PORTAL GATES</span><strong>100%</strong></div>
+              <div class="gauge-bar"><div style="width: 100%"></div></div>
+              <div class="gauge-row"><span>NEURAL THRUST</span><strong>BASE</strong></div>
+              <div class="gauge-bar"><div style="width: 42%"></div></div>
+            </div>
+
+            <ul class="pod-chips">
+              <li>✦ All 11 Space Portals</li>
+              <li>✦ 240-Frame Phantom HUD</li>
+              <li>✦ Star Map Radar</li>
+            </ul>
+          </article>
+
+          <article class="price-pod pod-featured fm-reveal" data-fm-delay="120">
+            <div class="pod-scanner-beam" aria-hidden="true"></div>
+            <div class="pod-visual-header">
+              <div class="pod-orb orb-violet"></div>
+              <span class="pod-tier-code">TIER 02 // PHANTOM PRO</span>
+            </div>
+            <h3 class="pod-title">Voyager Pro</h3>
+            <div class="pod-price-row">
+              <span class="pod-currency">$</span>
+              <span class="price-figure" data-price-monthly="19" data-price-annual="14" data-price-lifetime="149">19</span>
+              <span class="price-period" data-period-monthly="/ month" data-period-annual="/ mo (annual)" data-period-lifetime="/ lifetime">/ month</span>
+            </div>
+
+            <div class="pod-gauges">
+              <div class="gauge-row"><span>NEURAL THRUST</span><strong>4.8× TURBO</strong></div>
+              <div class="gauge-bar"><div style="width: 86%"></div></div>
+              <div class="gauge-row"><span>STEALTH ALIASES</span><strong>UNLIMITED</strong></div>
+              <div class="gauge-bar"><div style="width: 94%"></div></div>
+            </div>
+
+            <ul class="pod-chips">
+              <li>✦ Priority AI Bandwidth</li>
+              <li>✦ Unlimited Stealth Relays</li>
+              <li>✦ Private Vault Sync</li>
+            </ul>
+          </article>
+
+          <article class="price-pod fm-reveal" data-fm-delay="240">
+            <div class="pod-visual-header">
+              <div class="pod-orb orb-gold"></div>
+              <span class="pod-tier-code">TIER 03 // OVERLORD</span>
+            </div>
+            <h3 class="pod-title">Commander</h3>
+            <div class="pod-price-row">
+              <span class="pod-currency">$</span>
+              <span class="price-figure" data-price-monthly="49" data-price-annual="36" data-price-lifetime="349">49</span>
+              <span class="price-period" data-period-monthly="/ month" data-period-annual="/ mo (annual)" data-period-lifetime="/ lifetime">/ month</span>
+            </div>
+
+            <div class="pod-gauges">
+              <div class="gauge-row"><span>DEDICATED GPU</span><strong>MAX 100%</strong></div>
+              <div class="gauge-bar"><div style="width: 100%"></div></div>
+              <div class="gauge-row"><span>CONTEXT MEMORY</span><strong>2M TOKENS</strong></div>
+              <div class="gauge-bar"><div style="width: 100%"></div></div>
+            </div>
+
+            <ul class="pod-chips">
+              <li>✦ Dedicated H100 Node</li>
+              <li>✦ Full API Access</li>
+              <li>✦ Direct Link to Yadhu</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="cosmic-footer">
+    <div class="container">
+      <div class="footer-top-row">
+        <span>YADHU // PHANTOM NEXUS · 240-FRAME ENGINE · © 2026</span>
+        <a href="#top" class="warp-top-link">WARP TO TOP ↑</a>
+      </div>
+      <div class="footer-holo-wordmark" aria-hidden="true">YADHU · PHANTOM</div>
+    </div>
+  </footer>
+
+  <!-- Cache-busted script so updates appear immediately -->
+  <script src="script.js?v=knop240_v4" defer></script>
+</body>
+</html>
